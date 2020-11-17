@@ -1,0 +1,15 @@
+
+The randomNumbers function begins by instancing an empty list, result, which will eventually hold the random list of numbers. Then, as long as the length of that list is less than the requested amount, n, the function enters a loop in which it generates a random number, checks if that number exists anywhere else in the list, and then if the number hadn't already been used, it adds it to the list. The problem with this function is that it doesn't add a number to the list every time through, and it had a nested for loop that causes the process to get slower and slower as the list get bigger. If the same number is assigned to num multiple times, the function has to iterate through the entire existing list to see if the number exists and if it does, it has to repeat.
+
+
+The randomIndexes function creates a list filled with -1's for the range provided. It then enters a loop that continues for the input value, n, iterations. The function spawns a random index in the range, goes to that index in the list and checks if it is currently a -1 or not. If it is a -1, the function proceeds to replace it with the given loop iteration. If not, it loops until it finds an index that still contains a -1. Essentially, the function takes each number from 1 to n and places it at a random location in the list. This function can be inefficient because if the random index continues to land on places in the list where the value does not equal -1, the loop will take a while.
+
+
+The function randomShuffle begins by making a list containing all of the numbers the user wants to be present in the final result, but in order. It then iterates through each index, switching it out with another random index. In the end, this ensures that the list is completely shuffled and it is much faster because it does not depend on the random integer function to not repeat itself. On the other hand, the function could possibly be made even faster if it could keep track of which random indexes were already switched and therefore it doesn't choose to switch them as it iterates down the list.
+
+
+In both cases, I expect to see that the iteration is completely random.
+
+
+As it turns out, both dictionaries are ordered by the order in which they were added to the dictionary. Because the original file had the cities ordered alphabetical by city name, both dictionaries are also ordered in that way when iterating from top to bottom of the csv file. I thought originally that the dictionaries would not be listed in order because typically dictionaries are considered an unordered object, and data does not have any relative position within the dictionary. However, when iterating using a for loop, it appears that both dictionaries have the same order.
+
